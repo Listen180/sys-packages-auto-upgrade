@@ -23,12 +23,14 @@ Setting in CRONTAB (sudo)
 -------------------------
 
 Edit the crontab list in ``sudo`` mode: 
+
 .. code-block:: shell
 
    sudo crontab -e
 
 
 Add this line: 
+
 .. code-block:: shell
 
    0 7 * * 5 cd [PATH-TO-THIS-REPO] && sh apt_auto_upgrade.sh 2>&1 &
