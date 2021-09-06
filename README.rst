@@ -35,4 +35,4 @@ Add this line:
 
    0 7 * * 5 cd [PATH-TO-THIS-REPO] && sh apt_auto_upgrade.sh 2>&1 &
 
-which will excute the auto upgrade program every friday at 7AM. You can always change the setting by your self in crontab. 
+which will excute the auto upgrade program every friday at 7AM. You can always change the setting by yourself in crontab. 
