@@ -17,11 +17,11 @@ OS="Unknown"
 OS=$(hostnamectl | grep "Operating System" | awk -F ':' '{print $2}')
 
 PKG="Unknown"
-if [[ ${OS} == '*Ubuntu*' ]]; then
+if [[ ${OS} == *'Ubuntu'* ]]; then
     PKG="apt"
-elif [[ ${OS} == '*Debian*' ]]; then
+elif [[ ${OS} == *'Debian'* ]]; then
     PKG="apt"
-elif [[ ${OS} == '*Centos*' ]]; then
+elif [[ ${OS} == *'Centos'* ]]; then
     PKG="yum"
 else
     echo "[Abort] OS info Unknown! [${OS}]"  >> ${logFile} 2>&1
