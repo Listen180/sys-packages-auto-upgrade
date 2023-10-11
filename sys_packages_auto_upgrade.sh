@@ -13,7 +13,8 @@ CWD=$(cd `dirname $0`; pwd)
 ctime=`date +%Y-%m-%d_%H-%M-%S`
 logFile="${CWD}/logs/auto_upgrade_${ctime}.log"
 
-OS=$(hostnamectl | grep "Operating System" | awk -F ':' '{print $2}') || OS="Unknown"
+OS="Unknown"
+OS=$(hostnamectl | grep "Operating System" | awk -F ':' '{print $2}')
 
 PKG="Unknown"
 if [[ ${OS} == '*Ubuntu*' ]]; then
@@ -22,6 +23,9 @@ elif [[ ${OS} == '*Debian*' ]]; then
     PKG="apt"
 elif [[ ${OS} == '*Centos*' ]]; then
     PKG="yum"
+else
+    echo "[Abort] OS info Unknown!"  >> ${logFile} 2>&1
+    exit 0
 fi
 
 if [[ ${PKG} == 'apt' ]]; then
