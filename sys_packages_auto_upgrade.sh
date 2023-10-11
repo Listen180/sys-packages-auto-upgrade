@@ -30,4 +30,7 @@ elif [[ ${PKG} == 'yum' ]]; then
     yum update > ${logFile} 2>&1
     echo -e "\n\n" >> ${logFile} 2>&1
     yum upgrade -y >> ${logFile} 2>&1
+else
+    echo "[Abort] PKG info Unknown!"
+    exit 0
 fi
