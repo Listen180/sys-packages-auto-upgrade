@@ -18,6 +18,8 @@ OS=$(hostnamectl | grep "Operating System" | awk -F ':' '{print $2}') || OS="Unk
 PKG="Unknown"
 if [[ ${OS} == '*Ubuntu*' ]]; then
     PKG="apt"
+elif [[ ${OS} == '*Debian*' ]]; then
+    PKG="apt"
 elif [[ ${OS} == '*Centos*' ]]; then
     PKG="yum"
 fi
