@@ -1,2 +1,3 @@
 logs/*
-!logs/_DIR_
+!**/._DIR_
+
