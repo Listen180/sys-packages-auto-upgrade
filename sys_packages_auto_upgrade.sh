@@ -24,7 +24,7 @@ elif [[ ${OS} == '*Debian*' ]]; then
 elif [[ ${OS} == '*Centos*' ]]; then
     PKG="yum"
 else
-    echo "[Abort] OS info Unknown!"  >> ${logFile} 2>&1
+    echo "[Abort] OS info Unknown! [${OS}]"  >> ${logFile} 2>&1
     exit 0
 fi
 
