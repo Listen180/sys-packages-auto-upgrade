@@ -18,16 +18,16 @@ OS=$(hostnamectl | grep "Operating System" | awk -F ':' '{print $2}')
 OS_l=$(echo ${OS} | tr '[:upper:]' '[:lower:]')
 
 PKG="Unknown"
-if [[ "${OS}" == *"Ubuntu"* ]]; then
+if [[ "${OS_l}" == *"ubuntu"* ]]; then
     PKG="apt"
-elif [[ "${OS}" == *"Debian"* ]]; then
+    echo "${OS}: ${PKG}"
+elif [[ "${OS_l}" == *"debian"* ]]; then
     PKG="apt"
-elif [[ "${OS}" == *"CentOS"* ]]; then
+    echo "${OS}: ${PKG}"
+elif [[ "${OS_l}" == *"centos"* ]]; then
     PKG="yum"
+    echo "${OS}: ${PKG}"
 else
     echo "[Abort] OS info Unknown! [${OS}]"  >> ${logFile} 2>&1
     exit 0
 fi
-
-echo "OS: ${OS}"
-echo "OS_l: ${OS_l}"
