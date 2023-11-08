@@ -21,7 +21,7 @@ if [[ "${OS}" == *"Ubuntu"* ]]; then
     PKG="apt"
 elif [[ "${OS}" == *"Debian"* ]]; then
     PKG="apt"
-elif [[ "${OS}" == *"Centos"* ]]; then
+elif [[ "${OS}" == *"CentOS"* ]]; then
     PKG="yum"
 else
     echo "[Abort] OS info Unknown! [${OS}]"  >> ${logFile} 2>&1
