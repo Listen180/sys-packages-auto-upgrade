@@ -29,11 +29,11 @@ else
 fi
 
 if [[ "${PKG}" == "apt" ]]; then
-    apt-get update > ${logFile} 2>&1
+    apt-get update -y > ${logFile} 2>&1
     echo -e "\n\n" >> ${logFile} 2>&1
     apt-get upgrade -y >> ${logFile} 2>&1
 elif [[ "${PKG}" == "yum" ]]; then
-    yum update > ${logFile} 2>&1
+    yum update -y > ${logFile} 2>&1
     echo -e "\n\n" >> ${logFile} 2>&1
     yum upgrade -y >> ${logFile} 2>&1
 else
