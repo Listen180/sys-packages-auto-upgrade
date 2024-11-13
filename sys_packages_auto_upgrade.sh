@@ -27,6 +27,9 @@ elif [[ "${OS_l}" == *"debian"* ]]; then
 elif [[ "${OS_l}" == *"centos"* ]]; then
     PKG="yum"
     echo "${OS}: ${PKG}"
+elif [[ "${OS_l}" == *"raspbian"* ]]; then
+    PKG="apt"
+    echo "${OS}: ${PKG}"
 else
     echo "[Abort] OS info Unknown! [${OS}]"  >> ${logFile} 2>&1
     exit 0
